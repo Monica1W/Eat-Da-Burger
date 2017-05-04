@@ -1,13 +1,13 @@
 ###Schema
 
-create database burgers_db;
-use burgers_db;
+create database fs3lyc8zxsxbe5hp;
+use fs3lyc8zxsxbe5hp;
 
 create table burgers (
-	id int NOT NULL AUTO_INCREMENT,
-    burger_name string(50) NOT NULL,
-    devoured boolean(5) NOT NULL,
-    date TIMESTAMP,
-    PRIMARY KEY (id)
+	id INT AUTO_INCREMENT NOT NULL,
+    burger_name VARCHAR(100) NOT NULL,
+    devoured boolean DEFAULT true NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)
  );
 
