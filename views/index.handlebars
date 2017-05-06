@@ -1,69 +1,55 @@
 <div class="jumbotron col-xs-12 col-md-12">
-<img src="/assets/img/burger1.jpg" alt="burger" height="100" width="100"/>
-<br>
-
-<h1>Eat the burger!</h1>
-<br>
-<h2>My Favorite burgers</h2>
+  <img src="/assets/img/burger1.jpg" alt="burger" height="100" width="100"/>
+  <br>
+  <h1>Eat the burger!</h1>
+  <br>
+  <h2>My Favorite burgers</h2>
 </div>
 <div class="container">
-<div id= "uneaten col-xs-2 col-md-2">
-<ol>
-  {{#each burgers}}
-    {{#unless this.devoured}}
+  <div id= "uneaten col-xs-2 col-md-2">
+    <ol>
+      {{#each burgers}}
+      {{#unless this.devoured}}
       <li>
         {{this.burger_name}}
-
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button type="submit">Eat IT!</button>
         </form>
-
-       
+        
       </li>
-    {{/unless}}
-  {{/each}}
-</ol>
-</div>
-<div id= "eaten col-xs-2 col-md-2">
-
-
-<ol>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
+      {{/unless}}
+      {{/each}}
+    </ol>
+  </div>
+  <div id= "eaten col-xs-2 col-md-2">
+    <ol>
+      {{#each burgers}}
+      {{#if this.devoured}}
+      <li id="eatenBurgers">
         {{this.burger_name}}
-
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" id = "dv" name="devoured" value="false">
         </form>
-
-       
+        
       </li>
-    {{/if}}
-  {{/each}}
-</ol>
-</div>
+      {{/if}}
+      {{/each}}
+    </ol>
+  </div>
 </div>
 <div id= "addburger col-xs-12 col-md-12" >
-
-<form class="create-update-form" action="/" method="POST">
-
-<br>
-  <div class="form-group">
-    <input type="text" id="bg" name="name">
+  <form class="create-update-form" action="/" method="POST">
     <br>
-     <button type="submit">Submit</button>
-     <br>
-    <label for="bg">Enter the burger you want to eat and click "Submit"</label>
-   
+    <div class="form-group">
+      <input type="text" id="bg" name="name">
+      <br>
+      <button type="submit">Submit</button>
+      <br>
+      <label for="bg">Enter the burger you want to eat and click "Submit"</label>
+      
+      
+    </div>
     
-
-  </div>
-
-
-
-  
-</form>
+  </form>
 </div>
-
